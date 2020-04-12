@@ -51,3 +51,16 @@ services:
       mynetwork:
         aliases:
           - mysql
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    networks:
+      mynetwork:
+        aliases:
+          - grafana
+    volumes:
+      - ./grafana-storage/:/var/lib/grafana
+    user: "472"
+    links:
+      - influxdb
