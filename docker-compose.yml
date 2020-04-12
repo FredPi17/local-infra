@@ -1,0 +1,53 @@
+version: '3.1'
+networks:
+  mynetwork:
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    networks:
+      - mynetwork
+    volumes:
+      - ./nginx/nginx/conf:/etc/nginx/nginx.conf
+      - ./nginx/letsencrypt:/etc/nginx/snippets/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    networks:
+      mynetwork:
+        aliases:
+          - mosquitto
+    ports:
+      - "1883:1883"
+
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node-red
+    environment:
+      - TZ=Europe/Paris
+    networks:
+      mynetwork:
+        aliases:
+          - node-red
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: weather
+      MYSQL_USER: weather
+      MYSQL_PASSWORD: weather
+      MYSQL_ROOT_PASSWORD: Jmpfricpiud
+    networks:
+      mynetwork:
+        aliases:
+          - mysql
