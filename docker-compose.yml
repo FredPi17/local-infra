@@ -60,5 +60,7 @@ services:
         aliases:
           - grafana
     volumes:
+      - ./grafana/dashboards:/conf/provisioning/dasboards
+      - ./grafana/datasources:/conf/provisioning/datasources
       - ./grafana-storage/:/var/lib/grafana
     user: "root"

@@ -1,0 +1,91 @@
+[
+  {
+    "id": 6,
+    "orgId": 1,
+    "name": "ESXi",
+    "type": "influxdb",
+    "typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+    "access": "proxy",
+    "url": "http://cloud.fredericpinaud.fr:8086",
+    "password": "",
+    "user": "",
+    "database": "ESXi",
+    "basicAuth": false,
+    "isDefault": false,
+    "jsonData": {
+      "httpMode": "GET",
+      "keepCookies": []
+    },
+    "readOnly": false
+  },
+  {
+    "id": 5,
+    "orgId": 1,
+    "name": "InfluxDB",
+    "type": "influxdb",
+    "typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+    "access": "proxy",
+    "url": "http://influxdb:8086",
+    "password": "",
+    "user": "",
+    "database": "debianserver-fixe",
+    "basicAuth": false,
+    "isDefault": false,
+    "jsonData": {
+      "httpMode": "GET",
+      "keepCookies": []
+    },
+    "readOnly": false
+  },
+  {
+    "id": 1,
+    "orgId": 1,
+    "name": "InfluxDB - DigitialOcean",
+    "type": "influxdb",
+    "typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+    "access": "proxy",
+    "url": "http://influxdb:8086",
+    "password": "",
+    "user": "",
+    "database": "digitalocean",
+    "basicAuth": false,
+    "isDefault": true,
+    "jsonData": {
+      "httpMode": "GET",
+      "keepCookies": []
+    },
+    "readOnly": false
+  },
+  {
+    "id": 7,
+    "orgId": 1,
+    "name": "Netatmo",
+    "type": "mysql",
+    "typeLogoUrl": "public/app/plugins/datasource/mysql/img/mysql_logo.svg",
+    "access": "proxy",
+    "url": "mysql:3306",
+    "password": "Jmpfricpiud",
+    "user": "root",
+    "database": "netatmo",
+    "basicAuth": false,
+    "isDefault": false,
+    "jsonData": {},
+    "readOnly": false
+  },
+  {
+    "id": 3,
+    "orgId": 1,
+    "name": "weather",
+    "type": "mysql",
+    "typeLogoUrl": "public/app/plugins/datasource/mysql/img/mysql_logo.svg",
+    "access": "proxy",
+    "url": "mysql",
+    "password": "weather",
+    "user": "weather",
+    "database": "weather",
+    "basicAuth": false,
+    "isDefault": false,
+    "jsonData": {},
+    "readOnly": false
+  }
+]
