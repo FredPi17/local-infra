@@ -64,3 +64,22 @@ services:
       - ./grafana/datasources:/conf/provisioning/datasources
       - ./grafana-storage/:/var/lib/grafana
     user: "root"
+
+  ubuntu-update:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PASSWORD=$PASSWORD
+      - MOSQUITTO_HOST=$MOSQUITTO_HOST
+      - MOSQUITTO_LOGIN=$MOSQUITTO_LOGIN
+      - MOSQUITTO_LOG_FILE=$MOSQUITTO_LOG_FILE
+      - NODE_HOST=$NODE_HOST
+      - NODE_HOST_LOGIN=$NODE_HOST_LOGIN
+      - NODE_HOST_LOG_FILE=$NODE_HOST_LOG_FILE
+      - GRAFANA_HOST=$GRAFANA_HOST
+      - GRAFANA_LOGIN=$GRAFANA_LOGIN
+      - GRAFANA_LOG_FILE=$GRAFANA_LOG_FILE
+      - CLOUD_HOST=$CLOUD_HOST
+      - CLOUD_LOGIN=$CLOUD_LOGIN
+      - CLOUD_LOG_FILE=$CLOUD_LOG_FILE
