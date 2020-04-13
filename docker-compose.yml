@@ -61,4 +61,4 @@ services:
           - grafana
     volumes:
       - ./grafana-storage/:/var/lib/grafana
-    user: "472"
+    user: "root"
